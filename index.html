@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bright Solutions | Data, Graphics, Documents, Print and Cyber Services</title>
+<meta name="description" content="Bright Solutions: data bundles and Bingwa Sokoni deals, graphic design, posters, video editing, document formatting, printing, photocopying, cyber services and soft-copy books. Order on WhatsApp.">
+<link rel="icon" href="media/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1E9E4A;--green-d:#13752F;--red:#D62828;--ink:#1c2420;--paper:#fbfdfb;--tint:#eef7f0;--line:#d6e5da;--card:#fff;--muted:#46554c;--hdr:rgba(251,253,251,.95);--foot:#1c2420;--footink:#dfe8e2;color-scheme:light}
+:root[data-theme=dark]{--green-d:#46cf79;--ink:#e8f1ea;--paper:#0e1511;--tint:#15211a;--line:#27382d;--card:#18241d;--muted:#a9bdb0;--hdr:rgba(14,21,17,.95);--foot:#070d09;--footink:#c9d6ce;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Nunito Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:"Bricolage Grotesque","Trebuchet MS",sans-serif;line-height:1.15}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:10px}
+.lead{max-width:60ch;color:var(--muted);margin-bottom:28px}
+header{position:sticky;top:0;z-index:5;background:var(--hdr);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+header .wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding-top:10px;padding-bottom:10px;text-align:center}
+.brand{display:flex;align-items:center;gap:8px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;text-decoration:none}
+.brand{justify-content:center}.brand img{height:84px;width:auto;max-width:100%}@media(max-width:700px){.brand img{height:64px}}.logo-d{display:none;mix-blend-mode:lighten}:root[data-theme=dark] .logo-d{display:inline-block}:root[data-theme=dark] .logo-l{display:none}.logo-chip{background:#fff;border-radius:10px;padding:2px 6px}
+nav{display:flex;gap:14px;font-size:.95rem;justify-content:center;align-items:center;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:600}
+nav a:hover{color:var(--green-d)}
+@media(max-width:700px){nav a:not(.keep){display:none}}
+.btn{display:inline-block;background:var(--green);color:#fff;padding:13px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{background:var(--green-d)}
+.btn.red{background:var(--red)}
+.btn.ghost{background:transparent;color:var(--green-d);border:2px solid var(--green)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.hero{background:linear-gradient(180deg,var(--tint),var(--paper));padding:48px 0 56px}
+.hero .wrap{display:grid;gap:28px;align-items:center}
+@media(min-width:800px){.hero .wrap{grid-template-columns:1.2fr .8fr}}
+.hero-logo{width:100%;max-width:380px;height:auto;margin-bottom:14px}.hero h1{font-size:clamp(2.1rem,6vw,3.5rem);font-weight:800}
+.hero h1 b{color:var(--green)}
+.hero p{margin:14px 0 22px;max-width:46ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.hv{width:100%;max-width:260px;margin:auto;display:block;border-radius:18px;border:4px solid var(--green);box-shadow:8px 8px 0 var(--red);background:#000}
+.glow{animation:glow 3.2s ease-in-out 1}
+@keyframes glow{0%{opacity:.25}60%{opacity:1}100%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.glow{animation:none}}
+.grid{display:grid;gap:18px}
+@media(min-width:700px){.grid.two{grid-template-columns:1fr 1fr}}
+.svc{border:1px solid var(--line);border-left:6px solid var(--green);border-radius:10px;padding:20px;background:var(--card)}
+.svc:nth-child(even){border-left-color:var(--red)}
+.svc h3{font-size:1.2rem;margin-bottom:6px}
+.svc ul{padding-left:18px;margin:8px 0 14px}
+.svc a.ask{font-weight:700;color:var(--green-d)}
+.steps{display:grid;gap:14px;counter-reset:s}
+@media(min-width:700px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{counter-increment:s;background:var(--tint);border-radius:10px;padding:18px}
+.step:before{content:counter(s);display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;margin-bottom:8px}
+.gal{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}@media(min-width:800px){.gal{grid-template-columns:repeat(3,1fr)}}.vids{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}.vids video{width:100%;border-radius:12px;background:#000;border:3px solid var(--line)}.vids .wide{grid-column:1/-1}.vids video:nth-child(3){grid-column:1/-1;width:calc(50% - 7px);justify-self:center}.vids .wide{grid-column:1/-1;max-width:640px;margin:0 auto}@media(min-width:800px){.vids{grid-template-columns:repeat(3,1fr);align-items:center}.vids video:nth-child(3){grid-column:auto;width:100%;justify-self:stretch}.vids .wide{grid-column:1/-1;max-width:640px;margin:0 auto}}.gal{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}@media(min-width:800px){.gal{grid-template-columns:repeat(3,1fr)}}figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}figcaption{font-size:.92rem;color:var(--muted);margin-top:6px}.soon{border:2px dashed var(--line);border-radius:10px;padding:26px;text-align:center;color:var(--muted);background:var(--card)}
+.band{background:var(--green);color:#fff}:root[data-theme=dark] .band{background:#0f5c26}:root[data-theme=dark] .band .btn{background:#fff;color:#0d5a24}:root[data-theme=dark] .btn{color:#04210e}:root[data-theme=dark] .btn.ghost{color:var(--green-d)}:root[data-theme=dark] .float{color:#04210e}.float svg{width:24px;height:24px;flex:none;fill:currentColor}@media(max-width:600px){.float{right:12px;top:76px;padding:12px}.float span{display:none}}
+.band .btn{background:#fff;color:#13752F}
+.band .lead{color:#e8f6ec}
+.contact-list{list-style:none;padding:0;display:grid;gap:8px}
+details{border:1px solid var(--line);border-radius:10px;padding:14px 18px;background:var(--card);margin-bottom:10px}
+summary{font-weight:700;cursor:pointer}
+details p{margin-top:10px;color:var(--muted)}
+footer{background:var(--foot);color:var(--footink);padding:30px 0;font-size:.92rem}
+footer a{color:#fff}.tbtn{background:transparent;border:2px solid var(--line);color:var(--ink);border-radius:999px;width:42px;height:42px;font-size:1.1rem;cursor:pointer;flex:none}
+.float{position:fixed;right:16px;top:78px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#073b1c;font-weight:800;padding:14px 18px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+</style>
+<script>try{if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.className+=" fx"}catch(e){}</script>
+<style id="fx-style">
+/* ===== Visual effects: work in light and dark mode, respect reduced-motion ===== */
+:root{--fx-g:30,158,74;--fx-r:214,40,40;--fx-glow:.22}
+:root[data-theme=dark]{--fx-g:47,191,98;--fx-r:255,92,92;--fx-glow:.4}
+section{overflow-x:clip}
+
+/* scroll progress bar (green to red) */
+#fxbar{position:fixed;top:0;left:0;height:4px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--green),var(--red));z-index:50;pointer-events:none}
+
+/* heading underline: alternates direction green/red per section */
+section h2::after{content:"";display:block;height:4px;width:64px;margin-top:10px;border-radius:4px;background:linear-gradient(90deg,var(--green),var(--red));transition:width .9s .25s ease}
+section:nth-of-type(even) h2::after{background:linear-gradient(90deg,var(--red),var(--green))}
+.band h2::after{background:#fff}
+.fx section h2:not(.in)::after{width:0}
+
+@media (prefers-reduced-motion:no-preference){
+  /* hero: drifting colour glows (green and red alternate sides) */
+  .hero{position:relative;overflow:hidden;isolation:isolate}
+  .hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(60px);pointer-events:none}
+  .hero::before{width:340px;height:340px;left:-90px;top:-70px;background:radial-gradient(circle,rgba(var(--fx-g),.45),transparent 70%);animation:fxdrift1 14s ease-in-out infinite alternate}
+  .hero::after{width:380px;height:380px;right:-110px;bottom:-120px;background:radial-gradient(circle,rgba(var(--fx-r),.35),transparent 70%);animation:fxdrift2 17s ease-in-out infinite alternate}
+  @keyframes fxdrift1{to{transform:translate(140px,90px) scale(1.25)}}
+  @keyframes fxdrift2{to{transform:translate(-140px,-80px) scale(1.2)}}
+
+  /* hero text rises in on load, headline highlight shimmers green/red */
+  .fx .hero h1,.fx .hero p,.fx .hero .cta-row{animation:fxup .8s cubic-bezier(.2,.7,.2,1) both}
+  .fx .hero p{animation-delay:.12s}
+  .fx .hero .cta-row{animation-delay:.24s}
+  @keyframes fxup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  @supports (-webkit-background-clip:text) or (background-clip:text){
+    .hero h1 b{background:linear-gradient(90deg,var(--green),var(--red),var(--green));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fxshift 7s linear infinite}
+  }
+  @keyframes fxshift{to{background-position:-200% 0}}
+  .hv{animation:fxfloat 6s ease-in-out infinite}
+  @keyframes fxfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+  /* scroll reveal: alternates left / right, with a short stagger */
+  .fx .rv{opacity:0;transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s);will-change:opacity,transform}
+  .fx .rv-u{transform:translateY(26px)}
+  .fx .rv-l{transform:translateX(-34px)}
+  .fx .rv-r{transform:translateX(34px)}
+  .fx .rv-z{transform:scale(.92)}
+  .fx .rv.in{opacity:1;transform:none}
+  .fx .rv.done{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;transition-delay:0s;will-change:auto}
+
+  /* cards: lift on hover with a glow that alternates green / red */
+  .svc,.step,figure img,.vids video{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+  .svc:hover,.fx .svc.in:hover{transform:translateY(-6px)}
+  .svc:nth-child(odd):hover{box-shadow:0 14px 34px rgba(var(--fx-g),var(--fx-glow))}
+  .svc:nth-child(even):hover{box-shadow:0 14px 34px rgba(var(--fx-r),var(--fx-glow))}
+  .step:hover,.fx .step.in:hover{transform:translateY(-5px)}
+  .step:before{transition:transform .5s ease}
+  .step:hover:before{transform:rotate(360deg) scale(1.12)}
+  .step:nth-child(even):before{background:var(--green)}
+  figure:hover img{transform:translateY(-4px)}
+  figure:nth-child(odd):hover img{box-shadow:0 12px 28px rgba(var(--fx-g),var(--fx-glow))}
+  figure:nth-child(even):hover img{box-shadow:0 12px 28px rgba(var(--fx-r),var(--fx-glow))}
+  .vids video:hover,.fx .vids video.in:hover{transform:translateY(-4px);border-color:var(--green);box-shadow:0 12px 28px rgba(var(--fx-g),var(--fx-glow))}
+  details{transition:border-color .25s ease,box-shadow .25s ease}
+  details:hover{border-color:var(--green);box-shadow:0 6px 18px rgba(var(--fx-g),calc(var(--fx-glow) * .6))}
+  details:nth-of-type(even):hover{border-color:var(--red);box-shadow:0 6px 18px rgba(var(--fx-r),calc(var(--fx-glow) * .6))}
+
+  /* buttons: lift and light sweep */
+  .btn{position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+  .btn::after{content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .6s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(var(--fx-g),var(--fx-glow))}
+  .btn:hover::after{left:140%}
+  .btn:active{transform:translateY(0)}
+
+  /* floating WhatsApp button: soft pulse ring */
+  .float{animation:fxring 2.6s ease-out infinite;transition:transform .2s ease}
+  .float:hover{transform:scale(1.06)}
+  @keyframes fxring{0%{box-shadow:0 4px 14px rgba(0,0,0,.25),0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 4px 14px rgba(0,0,0,.25),0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 4px 14px rgba(0,0,0,.25),0 0 0 0 rgba(37,211,102,0)}}
+
+  /* join-the-group band: slow rotating sheen (white and red) */
+  .band{position:relative;overflow:hidden;isolation:isolate}
+  .band::before{content:"";position:absolute;inset:-60%;z-index:-1;pointer-events:none;background:conic-gradient(from 0deg,rgba(255,255,255,.16),transparent 25%,rgba(var(--fx-r),.2) 50%,transparent 75%,rgba(255,255,255,.16));animation:fxspin 24s linear infinite}
+  @keyframes fxspin{to{transform:rotate(360deg)}}
+
+  /* header: nav underline grows, colours alternate */
+  nav a{position:relative}
+  nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--green);transition:width .25s ease}
+  nav a:nth-child(even)::after{background:var(--red)}
+  nav a:hover::after{width:100%}
+  .brand img{transition:transform .3s ease}
+  .brand:hover img{transform:scale(1.04)}
+
+  /* smooth cross-fade when switching light / dark, and a spin on the toggle */
+  html.fx-theme,html.fx-theme *,html.fx-theme *::before,html.fx-theme *::after{transition:background-color .5s ease,color .5s ease,border-color .5s ease,box-shadow .5s ease!important}
+  .tbtn.fx-spin{animation:fxspin .6s ease}
+}
+</style>
+<script>try{var _t=localStorage.getItem("bs-theme");if(!_t&&matchMedia("(prefers-color-scheme: dark)").matches)_t="dark";if(_t)document.documentElement.setAttribute("data-theme",_t)}catch(e){}</script>
+<meta name="theme-color" content="#13752F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bright Solutions | Data, Graphics, Documents, Print and Cyber Services">
+<meta property="og:description" content="Data bundles and Bingwa Sokoni deals, graphic design, video editing, document formatting, printing, cyber services and soft-copy books at Chuka University. Order on WhatsApp.">
+<style id="proof-fix">
+/* accessibility: stronger contrast for white text on brand green (light mode) */
+:root:not([data-theme=dark]) .btn{background:#13752F}
+:root:not([data-theme=dark]) .btn:hover{background:#0f5f26}
+:root:not([data-theme=dark]) .btn.ghost{background:transparent;color:#13752F}
+:root:not([data-theme=dark]) .btn.ghost:hover{background:rgba(30,158,74,.12)}
+:root:not([data-theme=dark]) .band{background:#13752F}
+:root:not([data-theme=dark]) .band .btn{background:#fff;color:#13752F}
+:root:not([data-theme=dark]) .band .btn:hover{background:#eef7f0}
+:root:not([data-theme=dark]) .step:nth-child(even):before{background:#13752F}
+</style>
+<style id="bk-style">
+/* ===== Book search and browse + soft-copy books (self-contained; classes start with bk-) ===== */
+/* header button: visible text pill */
+/* slide-over panel */
+.bk-panel{position:absolute;z-index:4;left:0;top:0;width:min(540px,calc(100vw - 24px));background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 28px rgba(0,0,0,.18);display:none;color-scheme:light}
+:root[data-theme=dark] .bk-panel{color-scheme:dark}
+.bk-panel.open{display:block}
+.bk-in{padding:16px 16px 18px;text-align:left}
+.bk-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.bk-title{font-family:"Bricolage Grotesque","Trebuchet MS",sans-serif;font-weight:800;font-size:1.25rem;margin:0}
+.bk-close{flex:none;width:40px;height:40px;border-radius:50%;border:2px solid var(--line);background:var(--card);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0}
+.bk-close:hover{border-color:var(--red);color:var(--red)}
+.bk-row{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:600px){.bk-row{grid-template-columns:1fr 1fr}.bk-field:first-child{grid-column:1/-1}.bk-go{grid-column:1/-1}}
+.bk-field label{display:block;font-size:.85rem;font-weight:700;margin-bottom:4px}
+.bk-field input,.bk-field select{width:100%;padding:11px 12px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit;min-height:46px}
+.bk-field input:focus,.bk-field select:focus{border-color:var(--green)}
+.bk-field input+input{margin-top:8px}
+.bk-field [hidden]{display:none!important}
+.bk-go{text-align:center;white-space:nowrap}
+.bk-hint{min-height:1.3em;margin-top:8px;color:var(--red);font-weight:700;font-size:.92rem}
+:root[data-theme=dark] .bk-hint{color:#ff8a8a}
+.bk-note{margin-top:4px;font-size:.92rem;color:var(--muted)}
+.bk-sub{margin-top:16px;font-weight:800}
+.bk-chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.bk-chip{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 16px;font:inherit;font-weight:700;cursor:pointer}
+.bk-chip:hover{border-color:var(--green)}
+.bk-chip[aria-pressed=true]{background:#13752F;border-color:#13752F;color:#fff}
+:root[data-theme=dark] .bk-chip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#04210e}
+.bk-list{list-style:none;padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));margin:6px 0 0}
+.bk-list:empty{display:none}
+.bk-book{width:100%;text-align:left;border:1px solid var(--line);border-left:5px solid var(--green);background:var(--card);color:var(--ink);border-radius:10px;padding:10px 12px;font:inherit;cursor:pointer;display:block}
+.bk-list li:nth-child(even) .bk-book{border-left-color:var(--red)}
+.bk-book:hover{border-color:var(--green)}
+.bk-book b{display:block}
+.bk-book span{display:block;font-size:.88rem;color:var(--muted)}
+.bk-fine{margin-top:12px;font-size:.85rem;color:var(--muted)}
+/* services: 5th card spans the full row on wide screens */
+@media(min-width:700px){.svc.bk-wide{grid-column:1/-1}}
+/* hero book bar: translucent glass with a brand-colour border that flows on hover, focus and touch */
+.bk-hero{margin-top:26px;max-width:540px}
+.bk-kicker{font-size:.98rem;color:var(--muted);margin-bottom:8px}
+.bk-kicker b{font-family:"Bricolage Grotesque","Trebuchet MS",sans-serif;font-size:1.12rem;color:#13752F;margin-right:4px}
+:root[data-theme=dark] .bk-kicker b{color:var(--green)}
+.bk-bar{position:relative;display:flex;align-items:center;gap:8px;padding:6px 6px 6px 16px;border-radius:999px;background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+:root[data-theme=dark] .bk-bar{background:rgba(20,34,27,.55);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.bk-bar::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;background:linear-gradient(90deg,var(--green),var(--red),var(--green));background-size:200% 100%;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;opacity:.55;pointer-events:none}
+.bk-bar:hover::before,.bk-bar:focus-within::before{opacity:1}
+.bk-bar:focus-within{box-shadow:0 0 0 4px rgba(var(--fx-g),.28),0 12px 30px rgba(var(--fx-g),var(--fx-glow))}
+.bk-bar svg{width:22px;height:22px;flex:none;fill:none;stroke:var(--green);stroke-width:2.4;stroke-linecap:round}
+.bk-bar input{flex:1 1 auto;width:0;min-width:0;border:0;background:transparent;color:var(--ink);font:inherit;padding:10px 4px;outline:none}
+.bk-bar input::placeholder{color:var(--muted);opacity:1}
+.bk-bar .btn{padding:11px 20px;white-space:nowrap}
+.hero .wrap>*{min-width:0}
+@media(max-width:420px){.bk-bar{padding-left:12px;gap:6px}.bk-bar .btn{padding:10px 14px}.bk-kicker b{display:block;margin:0 0 2px}}
+:root:root .bk-bar .btn:active{background:var(--red);color:#fff}
+.bk-quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.bk-q{border:1px solid rgba(var(--fx-g),.5);background:rgba(255,255,255,.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--ink);border-radius:999px;padding:6px 14px;font:inherit;font-size:.9rem;font-weight:700;cursor:pointer}
+:root[data-theme=dark] .bk-q{background:rgba(20,34,27,.5)}
+.bk-q:hover{border-color:var(--green);background:rgba(var(--fx-g),.16)}
+.bk-q:nth-child(even):hover{border-color:var(--red);background:rgba(var(--fx-r),.14)}
+:root:root .bk-q:nth-child(odd):active{background:#13752F;border-color:#13752F;color:#fff}
+:root:root .bk-q:nth-child(even):active{background:var(--red);border-color:var(--red);color:#fff}
+@media (prefers-reduced-motion:no-preference){
+  .bk-bar{transition:transform .25s ease,box-shadow .25s ease}
+  .bk-bar::before{transition:opacity .25s ease}
+  .bk-bar:hover::before,.bk-bar:focus-within::before{animation:bkflow 3s linear infinite}
+  .bk-bar:hover,.bk-bar:focus-within{transform:translateY(-2px)}
+  .bk-bar:active{transform:scale(.985)}
+  .bk-bar:hover svg,.bk-bar:focus-within svg{animation:bkwiggle .7s ease}
+  .bk-q{transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease}
+  .bk-q:hover{transform:translateY(-3px)}
+  .bk-q:active{transform:scale(.93)}
+  .fx .bk-hero{animation:fxup .8s .36s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes bkflow{to{background-position:-200% 0}}
+  @keyframes bkwiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-14deg) scale(1.1)}60%{transform:rotate(10deg) scale(1.1)}}
+}
+/* keep the floating WhatsApp button just under the real header height, and out of the way while search is open */
+.float{top:calc(var(--hdr-h,140px) + 10px)!important}
+html.bk-open .float{opacity:0;pointer-events:none}
+</style>
+<style id="fb-style">
+/* ===== Feedback section (every class starts with fb-) ===== */
+.fb-grid{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);align-items:start}
+@media(min-width:900px){.fb-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+.fb-formcard{position:relative;padding:20px;border-radius:18px;background:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);box-shadow:0 10px 28px rgba(0,0,0,.08)}
+:root[data-theme=dark] .fb-formcard{background:rgba(20,34,27,.6);box-shadow:0 10px 28px rgba(0,0,0,.35)}
+.fb-formcard::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;background:linear-gradient(90deg,var(--green),var(--red),var(--green));background-size:200% 100%;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;opacity:.5;pointer-events:none}
+.fb-formcard:hover::before,.fb-formcard:focus-within::before{opacity:1}
+.fb-formcard h3{font-size:1.3rem;margin-bottom:4px}
+.fb-sub{color:var(--muted);font-size:.92rem;margin-bottom:14px}
+.fb-field{margin-bottom:12px}
+.fb-field>label,.fb-legend{display:block;font-weight:700;font-size:.9rem;margin-bottom:4px}
+.fb-field input[type=text],.fb-field select,.fb-field textarea{width:100%;padding:11px 12px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit;min-height:46px}
+.fb-field textarea{min-height:112px;resize:vertical}
+.fb-field input:focus,.fb-field select:focus,.fb-field textarea:focus{border-color:var(--green)}
+.fb-field [aria-invalid=true]{border-color:var(--red)}
+.fb-two{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.fb-count{display:block;text-align:right;color:var(--muted);font-size:.8rem;margin-top:2px}
+.fb-rate{border:0;padding:0;margin:0 0 12px}
+.fb-stars{display:inline-flex;flex-direction:row-reverse;gap:2px;position:relative}
+.fb-stars input{position:absolute;opacity:0;width:1px;height:1px}
+.fb-stars label{font-size:2.1rem;line-height:1;cursor:pointer;color:var(--line);padding:2px 3px;margin:0}
+.fb-stars input:checked ~ label{color:#13752F}
+:root[data-theme=dark] .fb-stars input:checked ~ label{color:var(--green)}
+.fb-stars label:hover,.fb-stars label:hover ~ label{color:var(--red)}
+.fb-stars input:focus-visible + label{outline:3px solid var(--red);outline-offset:2px;border-radius:6px}
+.fb-drop{position:relative;display:flex;align-items:center;gap:10px;border:2px dashed var(--line);border-radius:12px;padding:12px;cursor:pointer;background:var(--card);color:var(--muted);font-weight:700;font-size:.92rem}
+.fb-drop:hover,.fb-drop:focus-within{border-color:var(--green);color:var(--ink)}
+.fb-drop input{position:absolute;opacity:0;width:1px;height:1px}
+.fb-drop svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fb-thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.fb-thumb{position:relative;width:72px;height:72px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.fb-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.fb-thumb button{position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;border:0;background:rgba(0,0,0,.7);color:#fff;cursor:pointer;line-height:1;padding:0}
+.fb-consent{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;margin:6px 0 12px}
+.fb-consent input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:#13752F}
+.fb-msg{min-height:1.3em;font-weight:700;font-size:.92rem;margin-top:10px}
+.fb-msg.err{color:var(--red)}
+:root[data-theme=dark] .fb-msg.err{color:#ff8a8a}
+.fb-msg.ok{color:#13752F}
+:root[data-theme=dark] .fb-msg.ok{color:var(--green)}
+.fb-note{color:var(--muted);font-size:.85rem;margin-top:8px}
+.fb-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.fb-submit{width:100%;text-align:center}
+.fb-feedhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:10px}
+.fb-feedhead h3{font-size:1.3rem}
+.fb-avg{color:var(--muted);font-size:.92rem;font-weight:700}
+.fb-list{display:grid;gap:14px}
+.fb-item{position:relative;padding:16px 16px 14px;border:1px solid var(--line);border-left:6px solid var(--green);border-radius:12px;background:var(--card)}
+.fb-item:nth-child(even){border-left-color:var(--red)}
+.fb-rating{color:#13752F;letter-spacing:2px;font-size:1.05rem}
+:root[data-theme=dark] .fb-rating{color:var(--green)}
+.fb-tag{display:inline-block;font-size:.78rem;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin-left:8px;color:var(--muted);letter-spacing:0}
+.fb-text{margin:6px 0 8px;white-space:pre-wrap;overflow-wrap:anywhere}
+.fb-photos{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.fb-photos a{display:block;width:96px;height:96px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.fb-photos img{width:100%;height:100%;object-fit:cover;display:block}
+.fb-by{font-weight:800}
+.fb-meta{color:var(--muted);font-size:.88rem}
+.fb-reply{margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--tint);border-left:4px solid #13752F;font-size:.95rem;overflow-wrap:anywhere}
+:root[data-theme=dark] .fb-reply{border-left-color:var(--green)}
+.fb-reply b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:#13752F}
+:root[data-theme=dark] .fb-reply b{color:var(--green)}
+.fb-empty{padding:22px;text-align:center;border:2px dashed var(--line);border-radius:12px;color:var(--muted);background:var(--card)}
+:root:root .fb-submit:active{background:var(--red);color:#fff}
+.fb-detail{font-weight:400;font-size:.85rem;opacity:.9}
+@keyframes fbflow{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:no-preference){
+  .fb-formcard{transition:transform .25s ease,box-shadow .25s ease}
+  .fb-formcard::before{transition:opacity .25s ease}
+  .fb-formcard:hover::before,.fb-formcard:focus-within::before{animation:fbflow 3s linear infinite}
+  .fb-formcard:focus-within{transform:translateY(-2px);box-shadow:0 0 0 4px rgba(var(--fx-g),.2),0 14px 32px rgba(var(--fx-g),var(--fx-glow))}
+  .fb-stars label{transition:transform .15s ease,color .15s ease}
+  .fb-stars label:hover{transform:scale(1.25) rotate(-8deg)}
+  .fb-stars input:checked + label{animation:fbstar .45s ease}
+  @keyframes fbstar{50%{transform:scale(1.5) rotate(10deg)}}
+  .fb-drop{transition:border-color .2s ease,transform .2s ease}
+  .fb-drop:hover{transform:translateY(-2px)}
+  .fb-item{transition:transform .25s ease,box-shadow .25s ease}
+  .fb-item:hover{transform:translateY(-4px)}
+  .fb-item:nth-child(odd):hover{box-shadow:0 12px 28px rgba(var(--fx-g),var(--fx-glow))}
+  .fb-item:nth-child(even):hover{box-shadow:0 12px 28px rgba(var(--fx-r),var(--fx-glow))}
+  .fb-photos a{transition:transform .2s ease}
+  .fb-photos a:hover{transform:scale(1.08) rotate(-2deg)}
+  .fb-item.fb-new{animation:fbpop .7s cubic-bezier(.2,.8,.2,1) both,fbflash 2.4s ease .3s}
+  @keyframes fbpop{from{opacity:0;transform:translateY(-18px) scale(.96)}to{opacity:1;transform:none}}
+  @keyframes fbflash{0%,100%{box-shadow:0 0 0 0 rgba(var(--fx-g),0)}30%{box-shadow:0 0 0 6px rgba(var(--fx-g),.35)}60%{box-shadow:0 0 0 6px rgba(var(--fx-r),.3)}}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Bright Solutions home"><img class="logo-chip logo-l" src="media/logo-light.png" alt="Bright Solutions logo" width="1939" height="902"><img class="logo-d" src="media/logo-dark.png" alt="" aria-hidden="true" width="1938" height="902"></a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#work">Our work</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#contact">Contact</a>
+      <a class="keep" href="https://wa.me/254796419377?text=Hello%20Bright%20Solutions%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="keep" href="https://wa.me/c/254140223653" target="_blank" rel="noopener">Catalogue</a>
+    <button class="tbtn" id="theme" type="button" aria-label="Switch between light and dark mode" title="Light / dark mode">&#9680;</button>
+    </nav>
+  </div>
+  </header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <img class="logo-chip logo-l hero-logo" src="media/logo-light.png" alt="Bright Solutions: lightbulb with checkmark logo" width="1939" height="902"><img class="logo-d hero-logo" src="media/logo-dark.png" alt="" aria-hidden="true" width="1938" height="902"><h1>One place for your <b>data</b>, designs, documents and prints.</h1>
+      <p>Bright Solutions helps students, businesses and campaigns get things done fast: data bundles, posters, video edits, document formatting, printing, cyber services and soft-copy books. Message us on WhatsApp and get a quote.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://wa.me/254796419377?text=Hello%20Bright%20Solutions%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp</a>
+        <a class="btn ghost" href="#services">See our services</a>
+      </div>
+      <div class="bk-hero">
+        <div class="bk-kicker"><b>Looking for a book?</b> Bright Solutions will facilitate the provision of your soft copy, or you can request it from a bookshop.</div>
+        <div class="bk-bar" role="search" aria-label="Find a book">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
+          <input id="bk-bar-q" type="text" placeholder="Search a title, author or genre" aria-label="Search a title, author or genre" autocomplete="off">
+          <button class="btn" id="bk-bar-go" type="button">Find a book</button>
+        </div>
+        <div class="bk-quick" role="group" aria-label="Quick picks">
+          <button class="bk-q" type="button" data-g="Fiction">Fiction</button>
+          <button class="bk-q" type="button" data-g="Non-Fiction">Non-Fiction</button>
+          <button class="bk-q" type="button" data-g="Self-Help">Self-Help</button>
+          <button class="bk-q" type="button" data-g="Textbooks">Textbooks</button>
+          <button class="bk-q" type="button" data-f="soft">Soft copy</button>
+        </div>
+      </div>
+    </div>
+    <video class="hv" src="media/video-0-hero-kitchen-lights.mp4" poster="media/video-0-hero-kitchen-lights-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Interior project video by Bright Solutions"></video>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What we do</h2>
+    <p class="lead">Five service areas under one roof. Not sure which one you need? Send us a message and we will guide you.</p>
+    <div class="grid two">
+      <article class="svc">
+        <h3>Data and deals</h3>
+        <ul><li>Data bundle reselling</li><li>Bingwa Sokoni deals: data, call minutes and SMS packs</li><li>Earn 2 loyalty points for every KES 20 spent on any package</li></ul>
+        <a class="ask" href="https://wa.me/c/254140223653" target="_blank" rel="noopener">See data and Bingwa Sokoni prices</a>
+      </article>
+      <article class="svc">
+        <h3>Graphics and media</h3>
+        <ul><li>Graphic design and branding</li><li>Posters, flyers and campaign materials</li><li>Video editing</li><li>Sales and promotional materials, print or digital</li></ul>
+        <a class="ask" href="https://wa.me/254796419377?text=Hello%20Bright%20Solutions%2C%20I%20need%20a%20graphic%20design%20or%20video%20editing%20quote." target="_blank" rel="noopener">Get a design quote</a>
+      </article>
+      <article class="svc">
+        <h3>Documents</h3>
+        <ul><li>Document doctoring and correction</li><li>Formatting: assignments, CVs, reports, proposals</li><li>Typing and layout</li></ul>
+        <a class="ask" href="https://wa.me/254796419377?text=Hello%20Bright%20Solutions%2C%20I%20need%20help%20with%20a%20document." target="_blank" rel="noopener">Send your document</a>
+      </article>
+      <article class="svc">
+        <h3>Print and cyber</h3>
+        <ul><li>Printing and photocopying</li><li>Cyber services</li></ul>
+        <a class="ask" href="https://wa.me/254796419377?text=Hello%20Bright%20Solutions%2C%20I%20need%20printing%2C%20photocopying%20or%20cyber%20services." target="_blank" rel="noopener">Ask about printing and cyber</a>
+      </article>
+      <article class="svc bk-wide">
+        <h3>Soft-copy books</h3>
+        <ul><li>E-books and PDFs: novels, self-help and course textbooks</li><li>Search by title, author or genre, then request on WhatsApp</li><li>Delivered on WhatsApp once payment is confirmed</li></ul>
+        <a class="ask" href="#" data-bk-open data-f="soft">Find a book</a>
+      </article>
+    </div>
+    <p class="lead" style="margin-top:20px">Prices depend on the job. Message us for a clear quote before any work starts, or <a href="https://wa.me/c/254140223653" target="_blank" rel="noopener"><b>browse the full catalogue on WhatsApp</b></a>.</p>
+  </div>
+</section>
+
+<section id="how" style="background:var(--tint)">
+  <div class="wrap">
+    <h2>How ordering works</h2>
+    <p class="lead">No sign-ups and no forms. Everything happens on WhatsApp.</p>
+    <div class="steps">
+      <div class="step"><h3>Message us</h3><p>Tell us what you need and share any files.</p></div>
+      <div class="step"><h3>Get your quote</h3><p>We confirm the price and delivery time.</p></div>
+      <div class="step"><h3>Receive your work</h3><p>Pick up or get it on WhatsApp once payment is confirmed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Our work</h2>
+    <p class="lead">A look at the posters, designs and videos we have made.</p>
+    <div class="vids">
+      <video src="media/video-1-slatted-wall-tv-unit.mp4" poster="media/video-1-slatted-wall-tv-unit-poster.jpg" muted loop playsinline preload="none" aria-label="Video sample: interior project with slatted wall and marble TV unit"></video>
+      <video src="media/video-2-arched-mirrors.mp4" poster="media/video-2-arched-mirrors-poster.jpg" muted loop playsinline preload="none" aria-label="Video sample: branded interior walkthrough with arched mirrors and spotlights"></video>
+      <video src="media/video-3-ceiling-design.mp4" poster="media/video-3-ceiling-design-poster.jpg" muted loop playsinline preload="none" aria-label="Video sample: branded interior ceiling design walkthrough"></video>
+    </div>
+    <div class="grid two" style="margin-top:20px">
+      <figure><img src="media/banner-chuka-faculty-of-agriculture-gala.jpg" alt="Roll-up banner design for Chuka University Faculty of Agriculture Annual Gala Night" loading="lazy"><figcaption>Roll-up banner for Chuka University's Faculty of Agriculture Annual Gala Night</figcaption></figure>
+      <figure><img src="media/poster-bingwa-sokoni-offers.jpg" alt="Bright Solutions Bingwa Sokoni data, call minutes and SMS offers poster" loading="lazy"><figcaption>Our Bingwa Sokoni offers poster, updated as deals change</figcaption></figure>
+    </div>
+    <h3 style="margin:30px 0 12px">Posters and branding</h3>
+    <div class="gal">
+      <figure><img src="media/poster-personal-or-corporate.jpg" alt="Social media poster: Personal or Corporate?" loading="lazy"><figcaption>Social poster: Personal or Corporate?</figcaption></figure>
+      <figure><img src="media/poster-relevance-to-society.jpg" alt="Social media poster: Relevance to Society" loading="lazy"><figcaption>Social poster: Relevance to Society</figcaption></figure>
+      <figure><img src="media/poster-what-works-for-us.jpg" alt="Social media poster: What Works for Us?" loading="lazy"><figcaption>Social poster: What Works for Us?</figcaption></figure>
+      <figure><img src="media/poster-be-delusional.jpg" alt="Social media poster: Be Delusional" loading="lazy"><figcaption>Social poster: Be Delusional</figcaption></figure>
+      <figure><img src="media/poster-real-is-rare.jpg" alt="Social media poster: Real Is Rare" loading="lazy"><figcaption>Social poster: Real Is Rare</figcaption></figure>
+      <figure><img src="media/logo-vazzi-designs.jpg" alt="Vazzi Designs brand logo with scissors, needle and thread" loading="lazy"><figcaption>Brand logo for Vazzi Designs</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="feedback" style="background:var(--tint)">
+  <div class="wrap">
+    <h2>What our clients say</h2>
+    <p class="lead">Used Bright Solutions? Tell us how it went. Your feedback appears here straight away, with your name, location and the time you sent it.</p>
+    <div class="fb-grid">
+      <div class="fb-formcard" id="fb-formcard">
+        <h3>Share your feedback</h3>
+        <p class="fb-sub">It takes a minute. Photos are welcome as proof of the work.</p>
+        <form id="fb-form" novalidate>
+          <fieldset class="fb-rate">
+            <legend class="fb-legend">How was your experience?</legend>
+            <div class="fb-stars" id="fb-stars">
+              <input type="radio" name="fb-rating" id="fb-r5" value="5"><label for="fb-r5" title="Excellent" aria-label="5 stars">&#9733;</label>
+              <input type="radio" name="fb-rating" id="fb-r4" value="4"><label for="fb-r4" title="Good" aria-label="4 stars">&#9733;</label>
+              <input type="radio" name="fb-rating" id="fb-r3" value="3"><label for="fb-r3" title="Okay" aria-label="3 stars">&#9733;</label>
+              <input type="radio" name="fb-rating" id="fb-r2" value="2"><label for="fb-r2" title="Poor" aria-label="2 stars">&#9733;</label>
+              <input type="radio" name="fb-rating" id="fb-r1" value="1"><label for="fb-r1" title="Very poor" aria-label="1 star">&#9733;</label>
+            </div>
+          </fieldset>
+          <div class="fb-field">
+            <label for="fb-service">Which service did you use? (optional)</label>
+            <select id="fb-service">
+              <option value="">Choose one</option>
+              <option>Data and deals</option>
+              <option>Graphics and media</option>
+              <option>Documents</option>
+              <option>Print and cyber</option>
+              <option>Soft-copy books</option>
+            </select>
+          </div>
+          <div class="fb-two">
+            <div class="fb-field"><label for="fb-name">Your name</label><input id="fb-name" type="text" maxlength="60" autocomplete="name" placeholder="Shown with your feedback" required></div>
+            <div class="fb-field"><label for="fb-loc">Your location</label><input id="fb-loc" type="text" maxlength="60" autocomplete="address-level2" placeholder="e.g. Chuka University" required></div>
+          </div>
+          <div class="fb-field">
+            <label for="fb-text">Your feedback</label>
+            <textarea id="fb-text" maxlength="600" placeholder="What did you order and how did it go?" required></textarea>
+            <span class="fb-count" id="fb-count" aria-hidden="true">0 / 600</span>
+          </div>
+          <div class="fb-field">
+            <span class="fb-legend">Photos as evidence (optional, up to 3)</span>
+            <label class="fb-drop" for="fb-photos"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-8 8"/></svg><span id="fb-droptext">Tap to add photos</span><input id="fb-photos" type="file" accept="image/*" multiple></label>
+            <div class="fb-thumbs" id="fb-thumbs"></div>
+          </div>
+          <input class="fb-hp" id="fb-website" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="fb-consent"><input id="fb-consent" type="checkbox"><span>I agree that my name, location, feedback and photos are shown publicly on this site.</span></label>
+          <button class="btn fb-submit" id="fb-submit" type="submit">Post my feedback</button>
+          <p class="fb-msg" id="fb-msg" role="status" aria-live="polite"></p>
+          <p class="fb-note">Your post is published instantly with the date and time you send it.</p>
+        </form>
+      </div>
+      <div class="fb-feedwrap" id="fb-feedwrap">
+        <div class="fb-feedhead"><h3>Latest feedback</h3><span class="fb-avg" id="fb-avg"></span></div>
+        <div class="fb-list" id="fb-list" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About Bright Solutions</h2>
+    <p class="lead">Founded in 2026, Bright Solutions is built on a simple promise: reliable, affordable help for everyday digital, design, document and print needs, delivered quickly and honestly. We are a young start-up based at Chuka University, and we are open 24 hours a day, 7 days a week.</p>
+  </div>
+</section>
+
+<section class="band" id="group">
+  <div class="wrap">
+    <h2>Join our WhatsApp group</h2>
+    <p class="lead">Get new deals, offers and updates as soon as we post them.</p>
+    <a class="btn" href="https://chat.whatsapp.com/BxQprSreNIEJS9brgmdfSf" target="_blank" rel="noopener">Join the group</a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact us</h2>
+    <ul class="contact-list">
+      <li><b>Call, WhatsApp or SMS:</b> <a href="https://wa.me/254796419377?text=Hello%20Bright%20Solutions%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">WhatsApp 0796 419 377</a> &middot; <a href="tel:+254796419377">Call 0796 419 377</a> &middot; <a href="sms:+254796419377">SMS</a></li>
+      <li><b>Location:</b> Chuka University</li>
+      <li><b>Hours:</b> Open 24/7 on WhatsApp</li>
+      <li><b>Pay by Till:</b> Buy Goods Till 4273808 (Bright Recha Otieno)</li>
+      <li><b>Pay by Paybill:</b> Business number 247247 (BRIGHT SOLUTION), account number 0796419377</li>
+      <li><b>Catalogue:</b> <a href="https://wa.me/c/254140223653" target="_blank" rel="noopener">View all services on WhatsApp</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="policies" style="background:var(--tint)">
+  <div class="wrap">
+    <h2>Policies</h2>
+    <details id="privacy"><summary>Privacy policy</summary>
+      <p>We collect only what we need to serve you, such as your name, WhatsApp number and the files you send for your order. We use it only to complete your work and contact you about it. We never sell or share your information or documents with others. You can ask us to delete your files after your order is complete. If you post feedback on this site, the name, location, comment, photos and time you submit are shown publicly; ask us on WhatsApp and we will remove them.</p></details>
+    <details id="terms"><summary>Terms of service</summary>
+      <p>Prices and delivery times are agreed on WhatsApp before work starts. Work begins once payment, or an agreed deposit, is confirmed. Please check your finished work and tell us about corrections within 24 hours. Data bundles and deals are delivered once payment is confirmed.</p></details>
+    <details id="refunds"><summary>Refund policy</summary>
+      <p>If we make a mistake, we will fix it free of charge. If we cannot deliver what we agreed, you get a refund for the undelivered part. Completed data bundle purchases cannot be reversed. Contact us on WhatsApp to raise any issue.</p></details>
+    <details><summary>File confidentiality</summary>
+      <p>Documents and designs you send us stay private. We use them only for your order.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Bright Solutions</b> &copy; 2026. Data, graphics, documents, print, cyber services and soft-copy books.</p>
+    <p><a href="#privacy">Privacy</a> &middot; <a href="#terms">Terms</a> &middot; <a href="#refunds">Refunds</a></p>
+  </div>
+</footer>
+
+<a class="float" href="https://wa.me/254796419377?text=Hello%20Bright%20Solutions%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>Chat on WhatsApp</span></a>
+
+<script>
+(function(){
+  var r=document.documentElement,saved=null;
+  try{saved=localStorage.getItem("bs-theme")}catch(e){}
+  var dark=saved?saved==="dark":window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;
+  function set(d){r.setAttribute("data-theme",d?"dark":"light");dark=d}
+  set(dark);
+  document.getElementById("theme").addEventListener("click",function(){
+    set(!dark);try{localStorage.setItem("bs-theme",dark?"dark":"light")}catch(e){}
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener("click",function(e){
+    var id=a.getAttribute("href");if(id.length<2)return;
+    var t=document.querySelector(id);if(!t)return;e.preventDefault();
+    if(t.tagName==="DETAILS")t.open=true;t.scrollIntoView({behavior:"smooth",block:"start"});});});
+})();
+</script>
+<script>
+(function(){
+  var vids=document.querySelectorAll(".vids video");
+  if(!("IntersectionObserver" in window)){vids.forEach(function(v){v.play&&v.play().catch(function(){})});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    var v=e.target;
+    if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}
+  })},{threshold:0.35});
+  vids.forEach(function(v){io.observe(v)});
+})();
+</script>
+<script>
+(function(){
+  var root=document.documentElement,fx=/(^|\s)fx(\s|$)/.test(root.className);
+
+  /* scroll progress bar */
+  var bar=document.createElement("div");bar.id="fxbar";document.body.appendChild(bar);
+  var tick=false;
+  function prog(){tick=false;var h=root.scrollHeight-root.clientHeight;bar.style.transform="scaleX("+(h>0?Math.min(1,root.scrollTop/h):0)+")"}
+  addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(prog)}},{passive:true});
+  addEventListener("resize",prog);prog();
+
+  /* scroll reveal: odd items slide in from the left, even from the right */
+  if(fx){
+    var groups=[["section h2","u"],["section .lead","u"],[".svc","alt"],[".step","alt"],["figure","z"],[".soon","u"],["details","alt"],[".contact-list li","alt"],[".vids video","alt"],[".band .btn","z"],[".biglogo","z"]];
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var el=e.target;el.classList.add("in");io.unobserve(el);
+      setTimeout(function(){el.classList.add("done")},1100);
+    })},{threshold:.12,rootMargin:"0px 0px -6% 0px"});
+    groups.forEach(function(g){
+      document.querySelectorAll(g[0]).forEach(function(el,i){
+        if(el.closest("header")||el.closest(".hero"))return;
+        var dir=g[1]==="alt"?(i%2?"r":"l"):g[1];
+        el.classList.add("rv","rv-"+dir);
+        el.style.setProperty("--d",(g[1]==="u"?0:(i%3)*.09)+"s");
+        io.observe(el);
+      });
+    });
+  }
+
+  /* theme switch: cross-fade + spin the toggle */
+  var tb=document.getElementById("theme");
+  if(tb)tb.addEventListener("click",function(){
+    root.classList.add("fx-theme");
+    tb.classList.remove("fx-spin");void tb.offsetWidth;tb.classList.add("fx-spin");
+    clearTimeout(window.__fxt);window.__fxt=setTimeout(function(){root.classList.remove("fx-theme")},700);
+  });
+})();
+</script>
+<div data-bk-moved class="bk-panel" id="bk-panel" role="region" aria-label="Book search and browse">
+    <div class="bk-in">
+      <div class="bk-head"><p class="bk-title">Find a book</p><button class="bk-close" id="bk-close" type="button" aria-label="Close book search">&times;</button></div>
+      <div class="bk-row" role="search">
+        <div class="bk-field"><label for="bk-q">Book title, author or keyword</label><input id="bk-q" type="text" placeholder="e.g. Atomic Habits" autocomplete="off"></div>
+        <div class="bk-field"><label for="bk-shop">Preferred bookshop</label><select id="bk-shop"></select><input id="bk-shop-other" type="text" placeholder="Type the bookshop name" aria-label="Bookshop name" hidden></div>
+        <div class="bk-field"><label for="bk-genre">Genre</label><select id="bk-genre"></select></div>
+        <div class="bk-field"><label for="bk-format">Format</label><select id="bk-format"></select></div>
+        <a class="btn bk-go" id="bk-go" href="https://wa.me/254796419377" target="_blank" rel="noopener">Request book on WhatsApp</a>
+      </div>
+      <p class="bk-hint" id="bk-hint" role="status" aria-live="polite"></p>
+      <p class="bk-note">&#9889; Direct Search: Your request will open in WhatsApp and we'll reply with availability and pricing within 1 hour!</p>
+      <p class="bk-sub">Browse by genre</p>
+      <div class="bk-chips" id="bk-chips" role="group" aria-label="Genres"></div>
+      <ul class="bk-list" id="bk-list" aria-live="polite"></ul>
+      <p class="bk-fine">Titles shown are popular requests, not a stock list. We confirm availability and price on WhatsApp.</p>
+    </div>
+  </div>
+<script>
+(function(){
+  /* ===== Book search and browse. EDIT THESE FOUR THINGS to match your real shops and stock ===== */
+  var BK_PHONE="254796419377";                 /* WhatsApp number: country code, no + or spaces */
+  var BK_SHOPS=[];                             /* partner bookshops, e.g. ["Shop One","Shop Two"] */
+  var BK_FORMATS=["Soft copy (PDF or e-book)","Hard copy (from a bookshop)"];
+  var BK_GENRES={                              /* genre: [ [title, note, optional search text], ... ] */
+    "Fiction":[["Blossoms of the Savannah","Henry Ole Kulet"],["The River Between","Ng\u0169g\u0129 wa Thiong'o"],["Weep Not, Child","Ng\u0169g\u0129 wa Thiong'o"],["Half of a Yellow Sun","Chimamanda Ngozi Adichie"]],
+    "Non-Fiction":[["Born a Crime","Trevor Noah"],["Long Walk to Freedom","Nelson Mandela"],["Why Nations Fail","Daron Acemoglu and James Robinson"]],
+    "Self-Help":[["Atomic Habits","James Clear"],["Rich Dad Poor Dad","Robert Kiyosaki"],["The 7 Habits of Highly Effective People","Stephen R. Covey"],["Think and Grow Rich","Napoleon Hill"]],
+    "Textbooks":[["Accounting and auditing","Tell us the unit code","Accounting and auditing textbook"],["Agriculture and sciences","Tell us the unit code","Agriculture and sciences textbook"],["Education and humanities","Tell us the unit code","Education and humanities textbook"],["Business and economics","Tell us the unit code","Business and economics textbook"]]
+  };
+
+  function $(id){return document.getElementById(id)}
+  var panel=$("bk-panel");
+  if(!panel)return;
+  var opener=null,closeBtn=$("bk-close");
+  var q=$("bk-q"),shop=$("bk-shop"),other=$("bk-shop-other"),genre=$("bk-genre"),fmt=$("bk-format"),go=$("bk-go"),hint=$("bk-hint"),chips=$("bk-chips"),list=$("bk-list");
+  var root=document.documentElement,hdr=document.querySelector("header"),heroBlock=document.querySelector(".bk-hero");
+  document.body.appendChild(panel);
+
+  function opt(sel,value,label){var o=document.createElement("option");o.value=value;o.textContent=label;sel.appendChild(o)}
+  opt(shop,"","Any bookshop");BK_SHOPS.forEach(function(s){opt(shop,s,s)});opt(shop,"__other","Other (type the name)");
+  opt(genre,"","Any genre");Object.keys(BK_GENRES).forEach(function(g){opt(genre,g,g)});
+  opt(fmt,"","Any format");BK_FORMATS.forEach(function(f){opt(fmt,f,f)});
+
+  function shopName(){
+    if(shop.value==="__other")return other.value.trim()||"Any";
+    return shop.value||"Any";
+  }
+  function message(){
+    return "Hello! I am searching for a book on your website.\n"+
+           "- Book / Keyword: "+(q.value.trim()||"Not specified")+"\n"+
+           "- Preferred Bookshop: "+shopName()+"\n"+
+           "- Genre: "+(genre.value||"Any")+
+           (fmt.value?"\n- Format: "+fmt.value:"");
+  }
+  function refresh(){go.href="https://wa.me/"+BK_PHONE+"?text="+encodeURIComponent(message())}
+  function empty(){return !q.value.trim()&&!genre.value&&!fmt.value&&shopName()==="Any"}
+
+  function renderList(){
+    list.innerHTML="";
+    var items=BK_GENRES[genre.value]||[];
+    items.forEach(function(it){
+      var li=document.createElement("li"),b=document.createElement("button");
+      b.type="button";b.className="bk-book";
+      var t=document.createElement("b");t.textContent=it[0];
+      var n=document.createElement("span");n.textContent=it[1];
+      b.appendChild(t);b.appendChild(n);
+      b.addEventListener("click",function(){
+        q.value=it[2]||(it[0]+" by "+it[1]);
+        hint.textContent="";refresh();
+        panel.scrollTo?panel.scrollTo({top:0,behavior:"smooth"}):0;q.focus({preventScroll:true});
+      });
+      li.appendChild(b);list.appendChild(li);
+    });
+    Array.prototype.forEach.call(chips.children,function(c){c.setAttribute("aria-pressed",String(c.getAttribute("data-g")===genre.value))});
+  }
+  Object.keys(BK_GENRES).forEach(function(g){
+    var c=document.createElement("button");
+    c.type="button";c.className="bk-chip";c.textContent=g;c.setAttribute("data-g",g);c.setAttribute("aria-pressed","false");
+    c.addEventListener("click",function(){genre.value=(genre.value===g)?"":g;hint.textContent="";renderList();refresh()});
+    chips.appendChild(c);
+  });
+
+  shop.addEventListener("change",function(){other.hidden=(shop.value!=="__other");if(!other.hidden)other.focus();refresh()});
+  genre.addEventListener("change",function(){renderList();refresh()});
+  fmt.addEventListener("change",refresh);
+  [q,other].forEach(function(el){
+    el.addEventListener("input",function(){hint.textContent="";refresh()});
+    el.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();go.click()}});
+  });
+  go.addEventListener("click",function(e){
+    if(empty()){e.preventDefault();hint.textContent="Type a title, author or keyword, or pick a genre, format or bookshop first.";q.focus();return}
+    hint.textContent="";refresh();
+  });
+
+  function place(){
+    if(!heroBlock)return;
+    var r=heroBlock.getBoundingClientRect(),w=Math.min(540,innerWidth-24);
+    var left=Math.min(Math.max(12,r.left+scrollX),scrollX+innerWidth-w-12);
+    panel.style.width=w+"px";panel.style.left=left+"px";panel.style.top=(r.bottom+scrollY+10)+"px";
+  }
+  function reveal(){
+    if(!heroBlock)return;
+    var hh=hdr?hdr.offsetHeight:0,r=heroBlock.getBoundingClientRect();
+    if(r.top<hh||r.bottom>innerHeight){            /* opened from elsewhere: bring the book bar into view */
+      window.scrollTo({top:Math.max(0,r.top+scrollY-hh-16),behavior:"smooth"});return;
+    }
+    var need=panel.getBoundingClientRect().bottom-innerHeight+16,room=r.top-hh-16;   /* already in view: scroll only as far as needed */
+    var d=Math.min(Math.max(need,0),Math.max(room,0));
+    if(d>0)window.scrollBy({top:d,behavior:"smooth"});
+  }
+  function isOpen(){return panel.classList.contains("open")}
+  function open(){opener=document.activeElement;place();panel.classList.add("open");root.classList.add("bk-open");reveal();setTimeout(function(){q.focus({preventScroll:true})},60)}
+  function close(back){panel.classList.remove("open");root.classList.remove("bk-open");if(back&&opener&&opener.focus&&document.contains(opener))opener.focus()}
+  if(closeBtn)closeBtn.addEventListener("click",function(e){e.stopPropagation();close(true)});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&isOpen())close(true)});
+  document.addEventListener("click",function(e){if(isOpen()&&!panel.contains(e.target))close(false)});
+
+  /* open the panel from the hero book bar, quick picks and the Soft-copy books card */
+  function openWith(o){
+    if(o.q!=null)q.value=o.q;
+    if(o.g!=null){genre.value=o.g;renderList()}
+    if(o.soft)fmt.value=BK_FORMATS[0];
+    hint.textContent="";refresh();open();
+  }
+  var bq=$("bk-bar-q"),bgo=$("bk-bar-go");
+  if(bq&&bgo){
+    bgo.addEventListener("click",function(e){e.stopPropagation();openWith({q:bq.value.trim()})});
+    bq.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();openWith({q:bq.value.trim()})}});
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".bk-q"),function(c){
+    c.addEventListener("click",function(e){e.stopPropagation();openWith({g:c.getAttribute("data-g"),soft:c.getAttribute("data-f")==="soft"})});
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-bk-open]"),function(a){
+    a.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();openWith({soft:a.getAttribute("data-f")==="soft"})});
+  });
+
+  /* keep the floating WhatsApp button and the search panel aligned to the real header height */
+  function hh(){if(hdr)root.style.setProperty("--hdr-h",hdr.offsetHeight+"px");if(isOpen())place()}
+  hh();addEventListener("resize",hh);addEventListener("load",hh);
+  if(window.ResizeObserver&&hdr)new ResizeObserver(hh).observe(hdr);
+
+  refresh();
+})();
+</script>
+<script>
+(function(){
+  /* ===== Feedback section. To make it post by itself, paste your free Supabase details below (see README) ===== */
+  var FB_URL="https://cufikgiudkdtfqgyyrcj.supabase.co";                 /* your project URL, e.g. https://abcdefgh.supabase.co */
+  var FB_KEY="sb_publishable_317nWB61rTKQ3Y-qhiKWNA_hdxYxIKc";                 /* the PUBLIC key (anon or publishable). Never the secret or service_role key */
+  var FB_TABLE="feedback",FB_BUCKET="feedback-photos",FB_PHONE="254796419377";
+  var MAX_PHOTOS=3;
+
+  function $(id){return document.getElementById(id)}
+  var form=$("fb-form");if(!form)return;
+  var configured=!!(FB_URL&&FB_KEY);
+  FB_URL=FB_URL.replace(/\/+$/,"");
+  var listEl=$("fb-list"),avgEl=$("fb-avg"),msg=$("fb-msg"),thumbs=$("fb-thumbs"),fileIn=$("fb-photos"),dropText=$("fb-droptext"),
+      nameIn=$("fb-name"),locIn=$("fb-loc"),textIn=$("fb-text"),svcIn=$("fb-service"),consent=$("fb-consent"),hp=$("fb-website"),countEl=$("fb-count"),btn=$("fb-submit");
+  var photos=[];                 /* {file,url} chosen by the visitor */
+
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
+  function headers(extra){
+    var h={apikey:FB_KEY};
+    if(/^eyJ/.test(FB_KEY))h.Authorization="Bearer "+FB_KEY;   /* legacy JWT keys also go in Authorization; publishable keys must not */
+    for(var k in extra)h[k]=extra[k];return h;
+  }
+  function when(iso){
+    var d=new Date(iso);if(isNaN(d))return "";
+    try{return new Intl.DateTimeFormat("en-KE",{day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:true,timeZone:"Africa/Nairobi"}).format(d)}
+    catch(e){return d.toLocaleString()}
+  }
+  function stars(n){n=Math.max(0,Math.min(5,n|0));return "\u2605\u2605\u2605\u2605\u2605".slice(0,n)+"\u2606\u2606\u2606\u2606\u2606".slice(0,5-n)}
+  function safePhoto(u){return typeof u==="string"&&u.indexOf(FB_URL+"/storage/v1/object/public/")===0}
+  function say(text,kind,detail){msg.textContent=text||"";msg.className="fb-msg"+(kind?" "+kind:"");if(detail)msg.appendChild(el("span","fb-detail"," ("+detail+")"))}
+  function short(t){t=String(t||"");try{var j=JSON.parse(t);t=j.message||j.error||j.msg||t}catch(x){}return t.replace(/\s+/g," ").slice(0,140)}
+
+  /* ---------- show feedback ---------- */
+  function card(r,isNew){
+    var a=el("article","fb-item"+(isNew?" fb-new":""));
+    var top=el("div","");
+    var st=el("span","fb-rating",stars(r.rating));st.setAttribute("role","img");st.setAttribute("aria-label",(r.rating|0)+" out of 5 stars");
+    top.appendChild(st);
+    if(r.service)top.appendChild(el("span","fb-tag",r.service));
+    a.appendChild(top);
+    a.appendChild(el("p","fb-text",r.message));
+    var ph=(r.photos||[]).filter(safePhoto);
+    if(ph.length){
+      var box=el("div","fb-photos");
+      ph.forEach(function(u,i){
+        var l=el("a");l.href=u;l.target="_blank";l.rel="noopener";l.setAttribute("aria-label","Open photo "+(i+1)+" in full size");
+        var im=el("img");im.src=u;im.alt="Photo shared by "+r.name+" with their feedback";im.loading="lazy";
+        l.appendChild(im);box.appendChild(l);
+      });
+      a.appendChild(box);
+    }
+    var by=el("div","fb-meta");
+    by.appendChild(document.createTextNode("\u2014 "));
+    by.appendChild(el("span","fb-by",r.name));
+    by.appendChild(document.createTextNode(", "+r.location+" \u00b7 "+when(r.created_at)));
+    a.appendChild(by);
+    if(r.reply){var rp=el("div","fb-reply");rp.appendChild(el("b","","Reply from Bright Solutions"));rp.appendChild(document.createTextNode(r.reply));a.appendChild(rp)}
+    return a;
+  }
+  function summary(rows){
+    if(rows.length>=3){
+      var avg=rows.reduce(function(s,r){return s+(r.rating|0)},0)/rows.length;
+      avgEl.textContent="\u2605 "+avg.toFixed(1)+" average from "+rows.length+" reviews";
+    }else avgEl.textContent="";
+  }
+  var rowsCache=[];
+  function renderAll(){
+    listEl.innerHTML="";
+    if(!rowsCache.length){
+      listEl.appendChild(el("div","fb-empty",configured?"No feedback yet. Yours could be the first!":"Feedback from our clients will appear here. Yours could be the first!"));
+    }else rowsCache.forEach(function(r){listEl.appendChild(card(r,false))});
+    summary(rowsCache);
+  }
+  function load(){
+    renderAll();
+    if(!configured)return;
+    fetch(FB_URL+"/rest/v1/"+FB_TABLE+"?select=id,created_at,name,location,message,rating,service,photos,reply&hidden=eq.false&order=created_at.desc&limit=100",{headers:headers()})
+      .then(function(r){if(!r.ok)return r.text().then(function(t){throw new Error("load "+r.status+": "+short(t))});return r.json()})
+      .then(function(rows){rowsCache=Array.isArray(rows)?rows:[];renderAll()})
+      .catch(function(err){try{console.error("Feedback load error:",err)}catch(x){}listEl.innerHTML="";var b=el("div","fb-empty","Feedback could not load right now. Please try again later.");b.appendChild(el("div","fb-detail",(err&&err.name==="TypeError")?"could not reach the database. Open the live website, not a preview":String(err&&err.message||err)));listEl.appendChild(b)});
+  }
+
+  /* ---------- photos ---------- */
+  function drawThumbs(){
+    thumbs.innerHTML="";
+    photos.forEach(function(p,i){
+      var t=el("div","fb-thumb"),im=el("img");im.src=p.url;im.alt="Selected photo "+(i+1);
+      var x=el("button","","\u00d7");x.type="button";x.setAttribute("aria-label","Remove photo "+(i+1));
+      x.addEventListener("click",function(){URL.revokeObjectURL(p.url);photos.splice(i,1);drawThumbs()});
+      t.appendChild(im);t.appendChild(x);thumbs.appendChild(t);
+    });
+    dropText.textContent=photos.length?(photos.length+" of "+MAX_PHOTOS+" photos added"+(photos.length<MAX_PHOTOS?". Tap to add more":"")):"Tap to add photos";
+  }
+  fileIn.addEventListener("change",function(){
+    var added=0,skipped=0;
+    Array.prototype.forEach.call(fileIn.files,function(f){
+      if(!/^image\//.test(f.type)||f.size>15*1024*1024){skipped++;return}
+      if(photos.length>=MAX_PHOTOS){skipped++;return}
+      photos.push({file:f,url:URL.createObjectURL(f)});added++;
+    });
+    fileIn.value="";drawThumbs();
+    if(skipped)say("Only images up to 15 MB are accepted, and up to "+MAX_PHOTOS+" photos.","err");else say("");
+  });
+  function compress(file){
+    return new Promise(function(resolve,reject){
+      var url=URL.createObjectURL(file),img=new Image();
+      img.onload=function(){
+        var max=1280,w=img.naturalWidth,h=img.naturalHeight,s=Math.min(1,max/Math.max(w,h));
+        var c=document.createElement("canvas");c.width=Math.max(1,Math.round(w*s));c.height=Math.max(1,Math.round(h*s));
+        var x=c.getContext("2d");x.fillStyle="#fff";x.fillRect(0,0,c.width,c.height);x.drawImage(img,0,0,c.width,c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(function(b){b?resolve(b):reject(new Error("compress"))},"image/jpeg",.8);
+      };
+      img.onerror=function(){URL.revokeObjectURL(url);reject(new Error("unreadable"))};
+      img.src=url;
+    });
+  }
+  function upload(blob){
+    var path=Date.now()+"-"+Math.random().toString(36).slice(2,10)+".jpg";
+    return fetch(FB_URL+"/storage/v1/object/"+FB_BUCKET+"/"+path,{method:"POST",headers:headers({"Content-Type":"image/jpeg","x-upsert":"false"}),body:blob})
+      .then(function(r){if(!r.ok)return r.text().then(function(t){throw new Error("photo upload "+r.status+": "+short(t))});return FB_URL+"/storage/v1/object/public/"+FB_BUCKET+"/"+path});
+  }
+
+  /* ---------- form ---------- */
+  textIn.addEventListener("input",function(){countEl.textContent=textIn.value.length+" / 600"});
+  function rating(){var c=form.querySelector('input[name="fb-rating"]:checked');return c?parseInt(c.value,10):0}
+  function mark(inp,bad){inp.setAttribute("aria-invalid",bad?"true":"false")}
+  function validate(){
+    var name=nameIn.value.trim(),loc=locIn.value.trim(),text=textIn.value.trim(),errs=[],first=null;
+    [nameIn,locIn,textIn].forEach(function(i){mark(i,false)});
+    if(!name||!loc){errs.push("Please add your name and location. They are shown with your feedback.");if(!name){mark(nameIn,true);first=first||nameIn}if(!loc){mark(locIn,true);first=first||locIn}}
+    if(!rating()){errs.push("Please choose a star rating.");first=first||$("fb-stars").querySelector("input")}
+    if(text.length<10){errs.push("Please write at least 10 characters of feedback.");mark(textIn,true);first=first||textIn}
+    if(!consent.checked){errs.push("Please tick the box to agree to your feedback being shown publicly.");first=first||consent}
+    return {errs:errs,first:first,name:name,loc:loc,text:text};
+  }
+  function waFallback(v){
+    var t=new Date(),stamp=when(t.toISOString());
+    var m="Hello! I would like to share feedback on Bright Solutions.\n- Rating: "+rating()+"/5\n"+(svcIn.value?"- Service: "+svcIn.value+"\n":"")+"- Name: "+v.name+"\n- Location: "+v.loc+"\n- Feedback: "+v.text+"\n- Sent: "+stamp+(photos.length?"\n(I will attach "+photos.length+" photo(s) in this chat.)":"");
+    window.open("https://wa.me/"+FB_PHONE+"?text="+encodeURIComponent(m),"_blank","noopener");
+    say("Opening WhatsApp so you can send your feedback. Add your photos there too. Thank you!","ok");
+  }
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(hp.value){say("Thank you!","ok");form.reset();return}               /* bots fill the hidden field */
+    var v=validate();
+    if(v.errs.length){say(v.errs.join(" "),"err");if(v.first&&v.first.focus)v.first.focus();return}
+    try{var last=+localStorage.getItem("bs-fb-last")||0;if(Date.now()-last<60000){say("You just posted. Please wait a minute before posting again.","err");return}}catch(x){}
+    if(!configured){waFallback(v);return}
+    btn.disabled=true;say("Posting your feedback\u2026");
+    var urls=[];
+    photos.reduce(function(p,ph){
+      return p.then(function(){return compress(ph.file)}).then(upload).then(function(u){urls.push(u)});
+    },Promise.resolve())
+    .then(function(){
+      return fetch(FB_URL+"/rest/v1/"+FB_TABLE,{method:"POST",headers:headers({"Content-Type":"application/json",Prefer:"return=representation"}),
+        body:JSON.stringify({name:v.name,location:v.loc,rating:rating(),service:svcIn.value||null,message:v.text,photos:urls})});
+    })
+    .then(function(r){if(!r.ok)return r.text().then(function(t){throw new Error("save "+r.status+": "+short(t))});return r.json()})
+    .then(function(rows){
+      var row=Array.isArray(rows)?rows[0]:rows;
+      rowsCache.unshift(row);
+      if(rowsCache.length===1)listEl.innerHTML="";else{var emp=listEl.querySelector(".fb-empty");if(emp)emp.remove()}
+      listEl.insertBefore(card(row,true),listEl.firstChild);summary(rowsCache);
+      try{localStorage.setItem("bs-fb-last",String(Date.now()))}catch(x){}
+      photos.forEach(function(p){URL.revokeObjectURL(p.url)});photos=[];drawThumbs();
+      form.reset();countEl.textContent="0 / 600";
+      say("Thank you! Your feedback is now live.","ok");
+      listEl.scrollIntoView({behavior:"smooth",block:"nearest"});
+    })
+    .catch(function(err){
+      try{console.error("Feedback error:",err)}catch(x){}
+      var m=String(err&&err.message||err),net=(err&&err.name==="TypeError");
+      if(/unreadable|compress/.test(m))say("One of the photos could not be read. Remove it or try another photo.","err");
+      else say("Sorry, your feedback could not be posted. Please try again, or send it on WhatsApp.","err",net?"could not reach the database. Open the live website, not a preview":m);
+    })
+    .then(function(){btn.disabled=false});
+  });
+
+  /* section effects: form slides in from the left, feed from the right */
+  if(/(^|\s)fx(\s|$)/.test(document.documentElement.className)&&"IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){
+      if(!en.isIntersecting)return;var t=en.target;t.classList.add("in");io.unobserve(t);setTimeout(function(){t.classList.add("done")},1100);
+    })},{threshold:.1});
+    [[$("fb-formcard"),"rv-l"],[$("fb-feedwrap"),"rv-r"]].forEach(function(p){p[0].classList.add("rv",p[1]);io.observe(p[0])});
+  }
+  load();
+})();
+</script>
+</body>
+</html>
