@@ -75,10 +75,14 @@ To change the Soft-copy books card, search for `Soft-copy books`.
 ## Logos
 `media/logo-light.png` shows in light mode, `media/logo-dark.png` in dark mode. Replace the files, keeping the same names.
 
-## Publish for free
-- Netlify Drop: go to app.netlify.com/drop and drag the whole folder in. You get a web address right away.
-- GitHub Pages: create a repository, upload the folder contents, then turn on Pages in Settings.
-After publishing, add a preview image for WhatsApp sharing: put `<meta property="og:image" content="https://YOUR-ADDRESS/media/logo-light.png">` next to the other `og:` lines.
+## Publish on GitHub Pages (your live address)
+Your site is at https://recha7.github.io/bright-solutions/ (GitHub account recha7, repository bright-solutions, kept Public).
+To change the site with GitHub Desktop:
+1. Copy the new or changed files into your `bright-solutions` folder (Repository, then Show in Explorer). A file with the same name replaces the old one.
+2. In GitHub Desktop, open the Changes tab, type a short summary, and click Commit to main.
+3. Click Push origin. The live site updates in about a minute. Press Ctrl+F5 to see it.
+Keep `sitemap.xml` and any `google....html` verification file in the folder. They help Google find and trust your site.
+Never put your Supabase database password or secret key into this folder. The public key already in `index.html` is safe.
 
 ## Good to remember
 - Make a copy of `index.html` before big edits.
