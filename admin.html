@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Owner admin | Bright Solutions</title>
+<link rel="icon" href="media/favicon.png">
+<style>
+:root{--g:#13752F;--r:#D62828;--ink:#1c2420;--line:#d6e5da;--tint:#eef7f0;--card:#fff;--paper:#fbfdfb;--muted:#46554c}
+@media(prefers-color-scheme:dark){:root{--g:#2fbf62;--ink:#e8f1ea;--line:#2a3b30;--tint:#15201a;--card:#18241d;--paper:#0e1511;--muted:#b3c4b8}}
+*{box-sizing:border-box;margin:0}
+body{font-family:system-ui,"Segoe UI",Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+.top img{height:38px;background:#fff;border-radius:6px}.top b{flex:1}
+main{max-width:980px;margin:0 auto;padding:20px}
+h1{font-size:1.5rem;margin-bottom:8px}h2{font-size:1.15rem;margin:18px 0 8px}
+button,.btn{border:0;border-radius:999px;padding:10px 18px;background:var(--g);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+@media(prefers-color-scheme:dark){button,.btn{color:#04210e}}
+button.sec{background:transparent;color:var(--g);border:2px solid var(--g)}
+button.del{background:var(--r);color:#fff}
+input,select,textarea{width:100%;padding:10px 12px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit}
+input:focus,select:focus,textarea:focus{border-color:var(--g)}
+.box{max-width:420px;display:grid;gap:10px;margin-top:12px}
+.msg{min-height:1.4em;font-weight:700}.err{color:var(--r)}.ok{color:var(--g)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.tabs button{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.tabs button[aria-pressed=true]{background:var(--g);border-color:var(--g);color:#fff}
+@media(prefers-color-scheme:dark){.tabs button[aria-pressed=true]{color:#04210e}}
+.card{border:1px solid var(--line);border-left:6px solid var(--g);border-radius:12px;background:var(--card);padding:14px;margin-bottom:12px}
+.card.hid{border-left-color:var(--r);opacity:.85}
+.meta{color:var(--muted);font-size:.9rem}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.row textarea{flex:1;min-width:200px;min-height:60px}
+table{width:100%;border-collapse:collapse;background:var(--card)}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;font-size:.92rem}
+th{background:var(--tint)}
+.photos a{display:inline-block;margin-right:6px}.photos img{width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+.st{display:grid;grid-template-columns:1fr 170px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+@media(max-width:560px){.st{grid-template-columns:1fr}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="top"><img src="media/logo-light.png" alt="Bright Solutions"><b>Owner admin</b><span class="meta" id="who"></span><button class="sec" id="out" type="button" hidden>Sign out</button></div>
+<main>
+<section id="login">
+  <h1>Owner sign in</h1>
+  <p class="meta">Enter your email. We send you a one-time sign-in link. Only the owner's email can open this page.</p>
+  <div class="box">
+    <input id="em" type="email" placeholder="Your email" autocomplete="email" aria-label="Your email">
+    <button id="send" type="button">Send sign-in link</button>
+    <p class="msg" id="lmsg" role="status" aria-live="polite"></p>
+  </div>
+</section>
+<section id="app" hidden>
+  <div class="tabs" role="group" aria-label="Sections">
+    <button type="button" data-t="fb" aria-pressed="true">Feedback</button>
+    <button type="button" data-t="rq" aria-pressed="false">Book requests</button>
+    <button type="button" data-t="bs" aria-pressed="false">Book status</button>
+  </div>
+  <p class="msg" id="amsg" role="status" aria-live="polite"></p>
+  <div id="p-fb"></div>
+  <div id="p-rq" hidden></div>
+  <div id="p-bs" hidden></div>
+</section>
+</main>
+<script>
+(function(){
+  /* Same public project details as the website. These are public keys. The owner-only rules live in Supabase. */
+  var URL="https://cufikgiudkdtfqgyyrcj.supabase.co",KEY="sb_publishable_317nWB61rTKQ3Y-qhiKWNA_hdxYxIKc";
+  function $(id){return document.getElementById(id)}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+  var tok=null;
+  function save(t,exp){tok=t;try{sessionStorage.setItem("bs-adm",JSON.stringify({t:t,e:exp}))}catch(x){}}
+  function load(){try{var o=JSON.parse(sessionStorage.getItem("bs-adm")||"null");if(o&&o.e>Date.now()/1000+30)return o.t}catch(x){}return null}
+  function hdr(extra){var h={apikey:KEY};if(tok)h.Authorization="Bearer "+tok;for(var k in extra)h[k]=extra[k];return h}
+  function api(path,opt){
+    opt=opt||{};opt.headers=hdr(opt.headers);
+    return fetch(URL+path,opt).then(function(r){
+      if(r.status===401){out(true);throw new Error("Session expired. Please sign in again.")}
+      if(!r.ok)return r.text().then(function(t){var m=t;try{m=JSON.parse(t).message||t}catch(x){}throw new Error(m.slice(0,160))});
+      return r.status===204?null:r.text().then(function(t){return t?JSON.parse(t):null});
+    });
+  }
+  function say(t,k){var m=$("amsg");m.textContent=t||"";m.className="msg"+(k?" "+k:"")}
+  /* ---- sign in with an emailed link ---- */
+  $("send").addEventListener("click",function(){
+    var em=$("em").value.trim(),m=$("lmsg");if(!/^\S+@\S+\.\S+$/.test(em)){m.textContent="Enter a valid email.";m.className="msg err";return}
+    $("send").disabled=true;m.textContent="Sending\u2026";m.className="msg";
+    fetch(URL+"/auth/v1/otp?redirect_to="+encodeURIComponent(location.origin+location.pathname),{method:"POST",headers:{apikey:KEY,"Content-Type":"application/json"},body:JSON.stringify({email:em,create_user:false})})
+      .then(function(r){m.textContent="If this is the owner's email, a sign-in link is on its way. Open it on this device.";m.className="msg ok"})
+      .catch(function(){m.textContent="Could not send the link. Check your connection.";m.className="msg err"})
+      .then(function(){$("send").disabled=false});
+  });
+  function out(silent){tok=null;try{sessionStorage.removeItem("bs-adm")}catch(x){}$("app").hidden=true;$("login").hidden=false;$("out").hidden=true;$("who").textContent="";if(!silent)$("lmsg").textContent=""}
+  $("out").addEventListener("click",function(){out(false)});
+  function fromHash(){
+    var h=location.hash.replace(/^#/,"");if(h.indexOf("access_token=")<0)return;
+    var p={};h.split("&").forEach(function(x){var i=x.indexOf("=");p[decodeURIComponent(x.slice(0,i))]=decodeURIComponent(x.slice(i+1))});
+    if(p.access_token)save(p.access_token,Math.floor(Date.now()/1000)+(parseInt(p.expires_in,10)||3600));
+    history.replaceState(null,"",location.pathname);
+  }
+  /* ---- tabs ---- */
+  var done={};
+  Array.prototype.forEach.call(document.querySelectorAll(".tabs button"),function(b){b.addEventListener("click",function(){show(b.getAttribute("data-t"))})});
+  function show(t){
+    Array.prototype.forEach.call(document.querySelectorAll(".tabs button"),function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-t")===t))});
+    ["fb","rq","bs"].forEach(function(k){$("p-"+k).hidden=(k!==t)});say("");
+    if(!done[t]){done[t]=1;({fb:loadFb,rq:loadRq,bs:loadBs})[t]()}
+  }
+  /* ---- feedback ---- */
+  function loadFb(){
+    var box=$("p-fb");box.textContent="Loading\u2026";
+    api("/rest/v1/feedback?select=*&order=created_at.desc&limit=200").then(function(rows){
+      box.innerHTML="";box.appendChild(el("p","meta",rows.length+" posts. Hidden posts are not shown on the website."));
+      rows.forEach(function(r){box.appendChild(fbCard(r))});
+      if(!rows.length)box.appendChild(el("p","meta","No feedback yet."));
+    }).catch(function(e){box.textContent="";say(e.message,"err")});
+  }
+  function fbCard(r){
+    var c=el("article","card"+(r.hidden?" hid":""));
+    c.appendChild(el("div","",String(r.rating)+" of 5 \u2014 "+r.name+", "+r.location));
+    c.appendChild(el("div","meta",new Date(r.created_at).toLocaleString("en-KE",{timeZone:"Africa/Nairobi"})+(r.service?" \u00b7 "+r.service:"")));
+    c.appendChild(el("p","",r.message));
+    if((r.photos||[]).length){var ph=el("div","photos");r.photos.forEach(function(u){if(u.indexOf(URL+"/storage/v1/object/public/")!==0)return;var a=el("a");a.href=u;a.target="_blank";a.rel="noopener";var i=el("img");i.src=u;i.alt="Photo from "+r.name;a.appendChild(i);ph.appendChild(a)});c.appendChild(ph)}
+    var row=el("div","row"),ta=el("textarea");ta.value=r.reply||"";ta.placeholder="Your public reply (optional)";ta.maxLength=600;ta.setAttribute("aria-label","Reply to "+r.name);
+    var sv=el("button","sec","Save reply"),hd=el("button","sec",r.hidden?"Show on website":"Hide from website"),dl=el("button","del","Delete");
+    sv.type=hd.type=dl.type="button";
+    sv.addEventListener("click",function(){patchFb(r.id,{reply:ta.value.trim()||null},"Reply saved.")});
+    hd.addEventListener("click",function(){patchFb(r.id,{hidden:!r.hidden},r.hidden?"Now visible on the website.":"Now hidden from the website.").then(function(){done.fb=0;show("fb")})});
+    dl.addEventListener("click",function(){if(!confirm("Delete this post permanently?"))return;api("/rest/v1/feedback?id=eq."+r.id,{method:"DELETE"}).then(function(){say("Deleted.","ok");c.remove()}).catch(function(e){say(e.message,"err")})});
+    row.appendChild(ta);row.appendChild(sv);row.appendChild(hd);row.appendChild(dl);c.appendChild(row);return c;
+  }
+  function patchFb(id,body,ok){
+    return api("/rest/v1/feedback?id=eq."+id,{method:"PATCH",headers:{"Content-Type":"application/json",Prefer:"return=minimal"},body:JSON.stringify(body)}).then(function(){say(ok,"ok")}).catch(function(e){say(e.message,"err")});
+  }
+  /* ---- book requests ---- */
+  function table(cols,rows){
+    var t=el("table"),h=el("tr");cols.forEach(function(c){h.appendChild(el("th","",c[0]))});t.appendChild(h);
+    rows.forEach(function(r){var tr=el("tr");cols.forEach(function(c){var v=r[c[1]];tr.appendChild(el("td","",v==null?"":(c[2]?c[2](v):v)))});t.appendChild(tr)});
+    var w=el("div");w.style.overflowX="auto";w.appendChild(t);return w;
+  }
+  function loadRq(){
+    var box=$("p-rq");box.textContent="Loading\u2026";
+    Promise.all([api("/rest/v1/book_demand?select=*&limit=100"),api("/rest/v1/book_requests?select=*&order=created_at.desc&limit=60")]).then(function(a){
+      box.innerHTML="";box.appendChild(el("h2","","Most requested books"));
+      box.appendChild(a[0].length?table([["Title","title"],["Author","author"],["Requests","requests"],["Soft copy","soft_copy"],["Physical","physical"],["Not on list","not_on_list"]],a[0]):el("p","meta","No requests yet."));
+      box.appendChild(el("h2","","Latest requests"));
+      box.appendChild(a[1].length?table([["When","created_at",function(v){return new Date(v).toLocaleString("en-KE",{timeZone:"Africa/Nairobi"})}],["Title","title"],["Author","author"],["Format","format"],["Type","kind"]],a[1]):el("p","meta","No requests yet."));
+    }).catch(function(e){box.textContent="";say(e.message,"err")});
+  }
+  /* ---- book status ---- */
+  var statusMap={},titles=[];
+  function loadBs(){
+    var box=$("p-bs");box.textContent="Loading\u2026";
+    Promise.all([api("/rest/v1/book_status?select=title,status"),fetch("index.html").then(function(r){return r.text()})]).then(function(a){
+      a[0].forEach(function(r){statusMap[r.title]=r.status});
+      var m=/var RAW=`([\s\S]*?)`;/.exec(a[1]);titles=m?m[1].trim().split("\n").map(function(l){var p=l.split("|");return {t:p[0],a:p[1]}}):[];
+      box.innerHTML="";var s=el("input");s.type="search";s.placeholder="Search "+titles.length+" titles";s.setAttribute("aria-label","Search titles");box.appendChild(s);
+      box.appendChild(el("p","meta","Set a title to Available or Reserved. Titles set to On request show that status by default."));
+      var list=el("div");box.appendChild(list);
+      function draw(){
+        var q=s.value.trim().toLowerCase();list.innerHTML="";
+        titles.filter(function(b){return !q||(b.t+" "+b.a).toLowerCase().indexOf(q)>-1}).slice(0,50).forEach(function(b){
+          var row=el("div","st"),lab=el("div");lab.appendChild(el("b","",b.t));lab.appendChild(el("div","meta",b.a));
+          var sel=el("select");["On request","Available","Reserved"].forEach(function(o){var op=el("option","",o);op.value=o;sel.appendChild(op)});
+          sel.value=statusMap[b.t]||"On request";sel.setAttribute("aria-label","Status of "+b.t);
+          sel.addEventListener("change",function(){setStatus(b.t,sel.value)});row.appendChild(lab);row.appendChild(sel);list.appendChild(row);
+        });
+      }
+      s.addEventListener("input",draw);draw();
+    }).catch(function(e){box.textContent="";say(e.message,"err")});
+  }
+  function setStatus(t,v){
+    var p=v==="On request"?api("/rest/v1/book_status?title=eq."+encodeURIComponent(t),{method:"DELETE"}):
+      api("/rest/v1/book_status?on_conflict=title",{method:"POST",headers:{"Content-Type":"application/json",Prefer:"resolution=merge-duplicates,return=minimal"},body:JSON.stringify([{title:t,status:v}])});
+    p.then(function(){if(v==="On request")delete statusMap[t];else statusMap[t]=v;say("Saved: "+t+" is now "+v+".","ok")}).catch(function(e){say(e.message,"err")});
+  }
+  /* ---- start ---- */
+  function enter(){
+    api("/auth/v1/user").then(function(u){
+      $("who").textContent=u.email||"";$("login").hidden=true;$("app").hidden=false;$("out").hidden=false;done={};show("fb");
+    }).catch(function(){out(true)});
+  }
+  addEventListener("hashchange",function(){fromHash();if(tok)enter()});
+  fromHash();tok=tok||load();if(tok)enter();
+})();
+</script>
+</body>
+</html>

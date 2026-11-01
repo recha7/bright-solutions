@@ -72,6 +72,34 @@ The reply-time promise ("within 1 hour") is in the line that starts `Direct Sear
 Only offer soft copies you have the right to share: your own, public-domain, open-access or properly licensed books.
 To change the Soft-copy books card, search for `Soft-copy books`.
 
+## Template 2: guidance, showcase and library
+- "What brings you here?" buttons sit under the hero. Each scrolls to its section and changes the floating WhatsApp message to match. Links like `.../bright-solutions/#graphics` open the site on one service (`#graphics`, `#data`, `#printing`, `#documents`, `#video`, `#library`).
+- "Our work" has filter chips and a full-screen preview. To add a piece, copy a `<figure>` block as before. Names starting `poster-`, `banner-` or `logo-` sort into the right filter.
+- The Library searches 221 titles. Visitors can type a title, author or topic, or open the "Browse the library" dropdown, which shows the count and the genre filters. Titles not found are searched live on Open Library, and every request is logged.
+- To add books, edit the block of lines starting `Pride and Prejudice|Jane Austen` in `index.html`. Each line is `Title|Author|Genre|tags` with an optional `|pd` for public-domain books (F fiction, N non-fiction, S self-help, T textbooks). The page and the admin page count them automatically.
+- Mark a book Available or Reserved in the owner admin page (below). Everything else shows "On request".
+- Soft copies must be public-domain, openly licensed, or legitimately purchased or licensed. Add only titles you can supply.
+
+## Owner admin page (admin.html)
+Address: https://recha7.github.io/bright-solutions/admin.html. It is not linked from the site and is hidden from search engines. Only your email can use it.
+Set it up once:
+1. In Supabase, open Authentication, then Users, and click Add user. Create a user with your email (use the invite option, or set a password you will not use).
+2. Open Authentication, then Providers (or Sign In / Providers), then Email. Turn OFF "Allow new users to sign up".
+3. Open Authentication, then URL Configuration. Set Site URL to https://recha7.github.io/bright-solutions/ and add https://recha7.github.io/bright-solutions/admin.html under Redirect URLs.
+4. Open `supabase-admin.sql`, replace YOUR_EMAIL_HERE@example.com with your email, then run it in the SQL Editor (after the two earlier setup files).
+5. Open the admin page, enter your email, tap Send sign-in link, and open the link on the same device.
+In the admin page you can read all feedback, hide or show a post, write a public reply, delete a post, see the most requested books, and set books to Available or Reserved.
+Supabase's built-in email sends only a few emails per hour. If a link does not arrive, wait and try again, or set up your own email sender in Supabase later.
+
+## Website assistant (Cloudflare Workers AI)
+The "Ask our assistant" section stays hidden until you connect it, so visitors never see a broken box.
+1. Create a free account at cloudflare.com and open Workers and Pages.
+2. Create a Worker (start with the Hello World template) and deploy it. Click Edit code, replace everything with the contents of `cloudflare-worker.js`, then Deploy.
+3. In the Worker's Settings, open Bindings, Add, choose Workers AI, name the variable AI, and save and deploy.
+4. Copy the Worker address (it ends in workers.dev).
+5. In `index.html`, search for `AI_URL` and paste the address between the quotes. Save and upload the site again.
+The Worker only accepts requests from https://recha7.github.io. The free plan has a daily allowance. If Cloudflare retires the AI model named in the file, choose a current text model in Workers AI, Models and change the `MODEL` line.
+
 ## Logos
 `media/logo-light.png` shows in light mode, `media/logo-dark.png` in dark mode. Replace the files, keeping the same names.
 
@@ -85,6 +113,7 @@ Keep `sitemap.xml` and any `google....html` verification file in the folder. The
 Never put your Supabase database password or secret key into this folder. The public key already in `index.html` is safe.
 
 ## Good to remember
+- To preview, use `bright-solutions-single-file.html`. `index.html` shows pictures and videos only when the `media` folder is beside it.
 - Make a copy of `index.html` before big edits.
 - Policies are starter text. Adjust them to how you really work.
 - Only publish photos and videos you have permission to show.
